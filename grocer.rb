@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
     #item W/ COUPON that starts the same as the cart item, but has a different price and count
     item = coupon[:item]
     coupon_item = "#{coupon[:item]} W/COUPON"
-    if cart[item] && cart[item][:count] >= coupon[:num] && !cart[coupon_item]
+    if cart[item] && cart[item][:count] >= coupon[:num]
       #turn cost into a price per item
       pricer = coupon[:cost] / coupon[:num]
   
