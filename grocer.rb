@@ -32,8 +32,10 @@ def apply_coupons(cart, coupons)
     if cart[item] && cart[item][:count] >= coupon[:num]
       #turn cost into a price per item
       pricer = coupon[:cost] / coupon[:num]
-  
-      cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]}
+        if cart[coupon_item]
+          cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: cart[coupon_item][:count] + coupon[:num]}
+        else
+          
       #cart[coupon_item][:price] = pricer
       #cart[coupon_item][:count] = coupon[:num]
       
