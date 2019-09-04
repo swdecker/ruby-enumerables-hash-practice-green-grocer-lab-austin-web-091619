@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
       
       coupon_item = "#{coupon[:item]} W/COUPON"
       
-      cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]
+      cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]}
       #cart[coupon_item][:price] = price
       #cart[coupon_item][:count] = coupon[:num]
       
