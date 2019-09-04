@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
       pricer = coupon[:cost] / coupon[:num]
   
       cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]}
-      #cart[coupon_item][:price] = price
+      cart[coupon_item][:price] = pricer
       #cart[coupon_item][:count] = coupon[:num]
       
       #original item count less the coupon num
