@@ -35,7 +35,8 @@ def apply_coupons(cart, coupons)
         if cart[coupon_item]
           cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: cart[coupon_item][:count] + coupon[:num]}
         else
-          
+          cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]}
+        end
       #cart[coupon_item][:price] = pricer
       #cart[coupon_item][:count] = coupon[:num]
       
