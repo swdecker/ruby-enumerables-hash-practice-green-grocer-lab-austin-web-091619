@@ -55,8 +55,8 @@ def apply_clearance(cart)
   cart.each do |item_hash|
     binding.pry
     item = item_hash[0]
-    if cart[item][:clearance]
-      cart[item][:price] *= 0.8
+    if item_hash[1][:clearance]
+      cart[1][:price] *= 0.8
     end
     
   end
