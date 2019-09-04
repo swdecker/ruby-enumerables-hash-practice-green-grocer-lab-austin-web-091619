@@ -51,8 +51,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # code here
-  ccart = consolidate_cart(cart)
+  
   ccart.map do |item_hash|
     item = item_hash.keys[0]
     if cart[item][:clearance]
