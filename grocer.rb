@@ -1,3 +1,5 @@
+require pry
+
 def consolidate_cart(cart)
  
   cart_hash = {}
