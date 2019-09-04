@@ -28,18 +28,17 @@ def apply_coupons(cart, coupons)
     #if the coupon item is in the cart add a new item to the cart
     #item W/ COUPON that starts the same as the cart item, but has a different price and count
     item = coupon[:item]
-    if cart[item] && cart[item][:count] >= coupon[:num]
+    coupon_item = "#{coupon[:item]} W/COUPON"
+    if cart[item] && cart[item][:count] >= coupon[:num] && !cart[coupon_item]
       #turn cost into a price per item
       pricer = coupon[:cost] / coupon[:num]
-      
-      coupon_item = "#{coupon[:item]} W/COUPON"
-      
+  
       cart[coupon_item] = {price: pricer, clearance: cart[item][:clearance], count: coupon[:num]}
       #cart[coupon_item][:price] = price
       #cart[coupon_item][:count] = coupon[:num]
       
       #original item count less the coupon num
-      cart[coupon[:item]][:count] -= coupon[:num]
+      cart[item][:count] -= coupon[:num]
     end
   end
   
